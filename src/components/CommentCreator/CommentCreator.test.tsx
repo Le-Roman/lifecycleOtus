@@ -1,6 +1,8 @@
 import CommentCreator from './CommentCreator'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+
+afterEach(cleanup)
 
 describe('CommentCreator', () => {
   it('test CommentCreator is render', () => {

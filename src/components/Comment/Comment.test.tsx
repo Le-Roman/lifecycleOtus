@@ -1,6 +1,8 @@
 import Comment from './Comment'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import { CommentPost } from '../Post/PostTypes'
+
+afterEach(cleanup)
 
 describe('Component', () => {
   it('test Comment is render', () => {

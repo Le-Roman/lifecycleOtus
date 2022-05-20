@@ -1,5 +1,5 @@
 import Comments from './Comments'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import { CommentPost } from '../Post/PostTypes'
 
 const commentsOne: CommentPost[] = [
@@ -25,6 +25,10 @@ const commentsTwo: CommentPost[] = [
     title: 'Some title two',
   },
 ]
+
+Element.prototype.scrollIntoView = jest.fn()
+
+afterEach(cleanup)
 
 describe('Comments', () => {
   it('test Comment to render correctly when props change', () => {

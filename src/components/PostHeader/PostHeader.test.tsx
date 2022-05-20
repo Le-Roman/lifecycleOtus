@@ -1,6 +1,8 @@
 import PostHeader from './PostHeader'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import { User } from '../Post/PostTypes'
+
+afterEach(cleanup)
 
 describe('PostHeader', () => {
   it('test PostHeader is render', () => {

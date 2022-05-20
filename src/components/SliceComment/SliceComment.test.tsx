@@ -1,6 +1,8 @@
 import SliceComment from './SliceComment'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+
+afterEach(cleanup)
 
 describe('SliceComment', () => {
   it('test of how the component works when the user clicks on "more" and then on "minimize...', () => {

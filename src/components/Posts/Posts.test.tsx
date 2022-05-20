@@ -1,5 +1,5 @@
 import Posts from './Posts'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import { Photo } from '../App/appTypes'
 
 const photosOne: Photo[] = [
@@ -19,6 +19,8 @@ const photosTwo: Photo[] = [
     url: 'Some url two',
   },
 ]
+
+afterEach(cleanup)
 
 describe('Posts', () => {
   it('test Posts to render correctly when props change', () => {

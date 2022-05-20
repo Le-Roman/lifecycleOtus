@@ -3,7 +3,10 @@ import { render, cleanup } from '@testing-library/react'
 import { Photo } from '../App/appTypes'
 import userEvent from '@testing-library/user-event'
 
+Element.prototype.scrollIntoView = jest.fn();
+
 afterEach(cleanup)
+
 describe('Post', () => {
   const photo: Photo = {
     id: 1,
