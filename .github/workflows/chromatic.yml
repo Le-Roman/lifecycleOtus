@@ -15,5 +15,7 @@ jobs:
         uses: chromaui/action@v1
         with:
           workingDir: ./lifecycle
+          buildScriptName: build-storybook
+          storybookBuildDir: ./lifecycle/storybook-static
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
