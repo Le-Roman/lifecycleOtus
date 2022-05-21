@@ -55,7 +55,6 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.3.0",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.4.22",
@@ -67,6 +66,7 @@
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "^0.0.11",
     "@types/node-fetch": "^2.6.1",
+    "chromatic": "^6.5.4",
     "ts-jest": "^28.0.2",
     "typescript": "^4.6.4",
     "webpack": "^5.72.1"
