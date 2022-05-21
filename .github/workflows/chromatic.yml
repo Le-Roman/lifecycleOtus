@@ -19,3 +19,6 @@ jobs:
           storybookBuildDir: ./lifecycle/storybook-static
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          working-directory: ./lifecycle
+          LOG_LEVEL: 'debug'
