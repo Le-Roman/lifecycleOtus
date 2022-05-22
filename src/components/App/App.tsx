@@ -3,8 +3,8 @@ import { fetchCommonData } from '../../api'
 import Posts from '../Posts/Posts'
 import { AppState, FetchCommonData } from './appTypes'
 
-class App extends Component<{}, AppState> {
-  constructor(props: {}) {
+class App extends Component<Record<string,unknown>, AppState> {
+  constructor(props: Record<string,unknown>) {
     super(props)
     this.state = {
       coord: {

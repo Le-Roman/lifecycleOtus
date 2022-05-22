@@ -24,12 +24,16 @@
     "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "sb": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lint:fix": "eslint --ext .ts,.tsx --fix ./",
+    "check": "npm run lint:fix && npm run test"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:prettier/recommended",
+      "prettier"
     ],
     "overrides": [
       {
@@ -37,9 +41,27 @@
           "**/*.stories.*"
         ],
         "rules": {
-          "import/no-anonymous-default-export": "off"
+          "import/no-anonymous-default-export": "off",
+          "jsx-quotes": [
+            1,
+            "prefer-double"
+          ]
+        }
+      },
+      {
+        "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+        "extends": ["plugin:testing-library/react"],
+        "rules": {
+         "testing-library/prefer-screen-queries": "off"
         }
       }
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier",
+      "testing-library"
     ]
   },
   "browserslist": {
@@ -67,6 +89,11 @@
     "@storybook/testing-library": "^0.0.11",
     "@types/node-fetch": "^2.6.1",
     "chromatic": "^6.5.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-destructuring": "^2.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-testing-library": "^5.5.0",
+    "prettier": "^2.6.2",
     "ts-jest": "^28.0.2",
     "typescript": "^4.6.4",
     "webpack": "^5.72.1"

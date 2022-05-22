@@ -7,8 +7,8 @@ interface ResponseType {
   data: Photos
   status: number
   statusText: string
-  headers: {}
-  config: {}
+  headers: Record<string,unknown>
+  config: Record<string,unknown>
 }
 
 jest.mock('axios')
