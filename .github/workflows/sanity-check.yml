@@ -1,0 +1,19 @@
+name: Sanity Check
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Packages
+        working-directory: ${{env.working-directory}}
+        run: |
+          npm install
+      - name: Lint and tests check
+        working-directory: ${{env.working-directory}}
+        run: |
+          npm run check
