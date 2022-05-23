@@ -26,7 +26,8 @@
     "sb": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint:fix": "eslint --ext .ts,.tsx --fix ./",
-    "check": "npm run lint:fix && npm run test"
+    "check": "npm run lint:fix && npm run test",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -49,10 +50,15 @@
         }
       },
       {
-        "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-        "extends": ["plugin:testing-library/react"],
+        "files": [
+          "**/__tests__/**/*.[jt]s?(x)",
+          "**/?(*.)+(spec|test).[jt]s?(x)"
+        ],
+        "extends": [
+          "plugin:testing-library/react"
+        ],
         "rules": {
-         "testing-library/prefer-screen-queries": "off"
+          "testing-library/prefer-screen-queries": "off"
         }
       }
     ],
@@ -93,9 +99,17 @@
     "eslint-plugin-destructuring": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-testing-library": "^5.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "ts-jest": "^28.0.2",
     "typescript": "^4.6.4",
     "webpack": "^5.72.1"
+  },
+  "lint-staged": {
+    "*.(ts|tsx)": [
+      "npm run lint:fix",
+      "git add"
+    ]
   }
 }
