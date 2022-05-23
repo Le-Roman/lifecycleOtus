@@ -1,32 +1,32 @@
-import faker from '@faker-js/faker/locale/ru'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import Comments from './Comments'
+import faker from "@faker-js/faker/locale/ru";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import Comments from "./Comments";
 
 export default {
-  title: 'lifecyclewh/Comments',
+  title: "lifecyclewh/Comments",
   component: Comments,
   decorators: [
     (Story) => (
       <div
         style={{
-          padding: '1rem',
-          border: '1px solid #ddd',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          padding: "1rem",
+          border: "1px solid #ddd",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Story />
       </div>
     ),
   ],
-} as ComponentMeta<typeof Comments>
+} as ComponentMeta<typeof Comments>;
 
 const Template: ComponentStory<typeof Comments> = (args) => (
   <Comments {...args} />
-)
+);
 
-export const CommentsDefault = Template.bind({})
+export const CommentsDefault = Template.bind({});
 
 CommentsDefault.args = {
   comments: [
@@ -43,4 +43,4 @@ CommentsDefault.args = {
       username: faker.internet.userName(),
     },
   ],
-}
+};

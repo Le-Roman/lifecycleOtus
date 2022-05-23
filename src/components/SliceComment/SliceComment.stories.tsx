@@ -1,32 +1,32 @@
-import faker from '@faker-js/faker/locale/ru'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import SliceComment from './SliceComment'
+import faker from "@faker-js/faker/locale/ru";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import SliceComment from "./SliceComment";
 
 export default {
-  title: 'lifecyclewh/SliceComment',
+  title: "lifecyclewh/SliceComment",
   component: SliceComment,
   decorators: [
     (Story) => (
       <div
         style={{
-          padding: '1rem',
-          border: '1px solid #ddd',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          padding: "1rem",
+          border: "1px solid #ddd",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Story />
       </div>
     ),
   ],
-} as ComponentMeta<typeof SliceComment>
+} as ComponentMeta<typeof SliceComment>;
 
 const Template: ComponentStory<typeof SliceComment> = (args) => (
   <SliceComment {...args} />
-)
+);
 
-export const SliceCommentDefault = Template.bind({})
+export const SliceCommentDefault = Template.bind({});
 
 SliceCommentDefault.args = {
   comment: {
@@ -37,4 +37,4 @@ SliceCommentDefault.args = {
   },
   isView: true,
   handleClick: () => {},
-}
+};

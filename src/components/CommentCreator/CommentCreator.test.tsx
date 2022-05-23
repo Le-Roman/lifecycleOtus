@@ -1,15 +1,15 @@
-import CommentCreator from './CommentCreator'
-import { render, cleanup } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import CommentCreator from "./CommentCreator";
+import { render, cleanup } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-describe('CommentCreator', () => {
-  it('test CommentCreator is render', () => {
-    const value: string = ''
-    const comment: string = 'This is my comment'
-    const handleOnChange = jest.fn()
-    const handleClick = jest.fn()
+describe("CommentCreator", () => {
+  it("test CommentCreator is render", () => {
+    const value: string = "";
+    const comment: string = "This is my comment";
+    const handleOnChange = jest.fn();
+    const handleClick = jest.fn();
 
     const { getByRole } = render(
       <CommentCreator
@@ -17,16 +17,16 @@ describe('CommentCreator', () => {
         handleClick={handleClick}
         handleOnChange={handleOnChange}
       />
-    )
-    const inputComment = getByRole('textbox')
-    const sendCommentButton = getByRole('button')
-    expect(inputComment).toHaveAttribute('placeholder', 'Введите комментарий')
-    expect(inputComment).toHaveAttribute('value', value)
+    );
+    const inputComment = getByRole("textbox");
+    const sendCommentButton = getByRole("button");
+    expect(inputComment).toHaveAttribute("placeholder", "Введите комментарий");
+    expect(inputComment).toHaveAttribute("value", value);
 
-    userEvent.type(inputComment, comment)
-    expect(handleOnChange).toHaveBeenCalledTimes(comment.length)
+    userEvent.type(inputComment, comment);
+    expect(handleOnChange).toHaveBeenCalledTimes(comment.length);
 
-    userEvent.click(sendCommentButton)
-    expect(handleClick).toHaveBeenCalledTimes(1)
-  })
-})
+    userEvent.click(sendCommentButton);
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+});
